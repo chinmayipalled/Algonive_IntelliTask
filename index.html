@@ -1,1 +1,647 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="IntelliTask — A smart, intuitive task management system to organize your work with deadlines, calendar view, and intelligent reminders." />
+    <title>IntelliTask — Smart Task Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ==================== AUTH PAGES ==================== -->
+    <div id="auth-container" class="auth-container">
+        <div class="auth-left">
+            <div class="auth-brand">
+                <!-- IntelliTask Logo SVG - Circuit Checkmark -->
+                <svg class="auth-logo" viewBox="0 0 48 48" fill="none">
+                    <rect x="4" y="4" width="40" height="40" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"
+                        stroke-width="2" />
+                    <path d="M14 25L20 31L34 17" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="14" cy="25" r="2.5" fill="var(--accent)" />
+                    <circle cx="20" cy="31" r="2.5" fill="var(--accent)" />
+                    <circle cx="34" cy="17" r="2.5" fill="var(--accent)" />
+                    <line x1="34" y1="17" x2="39" y2="12" stroke="var(--accent)" stroke-width="1.5"
+                        stroke-linecap="round" opacity="0.4" />
+                    <line x1="14" y1="25" x2="9" y2="20" stroke="var(--accent)" stroke-width="1.5"
+                        stroke-linecap="round" opacity="0.4" />
+                    <line x1="20" y1="31" x2="15" y2="36" stroke="var(--accent)" stroke-width="1.5"
+                        stroke-linecap="round" opacity="0.4" />
+                    <circle cx="39" cy="12" r="1.5" fill="var(--accent)" opacity="0.4" />
+                    <circle cx="9" cy="20" r="1.5" fill="var(--accent)" opacity="0.4" />
+                    <circle cx="15" cy="36" r="1.5" fill="var(--accent)" opacity="0.4" />
+                </svg>
+                <h1 class="auth-app-name">IntelliTask</h1>
+                <p class="auth-tagline">Smart task management for smart people.</p>
+            </div>
+
+            <!-- Decorative illustration: person with checklist -->
+            <div class="auth-illustration">
+                <svg viewBox="0 0 300 240" fill="none" class="illustration-svg">
+                    <!-- Desk -->
+                    <rect x="60" y="180" width="180" height="6" rx="3" fill="var(--accent)" opacity="0.15" />
+                    <!-- Paper/checklist -->
+                    <rect x="110" y="60" width="80" height="110" rx="6" fill="var(--card-bg)" stroke="var(--accent)"
+                        stroke-width="1.5" />
+                    <line x1="125" y1="82" x2="170" y2="82" stroke="var(--border-strong)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="125" y1="96" x2="160" y2="96" stroke="var(--border-strong)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="125" y1="110" x2="165" y2="110" stroke="var(--border-strong)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="125" y1="124" x2="155" y2="124" stroke="var(--border-strong)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="125" y1="138" x2="162" y2="138" stroke="var(--border-strong)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <line x1="125" y1="152" x2="148" y2="152" stroke="var(--border-strong)" stroke-width="1.5"
+                        stroke-linecap="round" />
+                    <!-- Checkboxes -->
+                    <rect x="112" y="77" width="8" height="8" rx="2" stroke="var(--green)" stroke-width="1.5" />
+                    <path d="M113.5 81.5L115 83L118.5 78.5" stroke="var(--green)" stroke-width="1.2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <rect x="112" y="91" width="8" height="8" rx="2" stroke="var(--green)" stroke-width="1.5" />
+                    <path d="M113.5 95.5L115 97L118.5 92.5" stroke="var(--green)" stroke-width="1.2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <rect x="112" y="105" width="8" height="8" rx="2" stroke="var(--accent)" stroke-width="1.5" />
+                    <rect x="112" y="119" width="8" height="8" rx="2" stroke="var(--accent)" stroke-width="1.5" />
+                    <rect x="112" y="133" width="8" height="8" rx="2" stroke="var(--accent)" stroke-width="1.5" />
+                    <rect x="112" y="147" width="8" height="8" rx="2" stroke="var(--accent)" stroke-width="1.5" />
+                    <!-- Pencil -->
+                    <g transform="rotate(-30 210 100)">
+                        <rect x="205" y="70" width="6" height="50" rx="1" fill="var(--yellow)" opacity="0.7" />
+                        <polygon points="205,120 208,130 211,120" fill="var(--accent)" opacity="0.4" />
+                        <rect x="205" y="68" width="6" height="6" rx="1" fill="var(--red)" opacity="0.5" />
+                    </g>
+                    <!-- Floating decorative elements -->
+                    <circle cx="75" cy="90" r="4" fill="var(--accent)" opacity="0.15">
+                        <animate attributeName="cy" values="90;85;90" dur="3s" repeatCount="indefinite" />
+                    </circle>
+                    <circle cx="230" cy="70" r="3" fill="var(--pink)" opacity="0.2">
+                        <animate attributeName="cy" values="70;64;70" dur="4s" repeatCount="indefinite" />
+                    </circle>
+                    <rect x="240" y="120" width="8" height="8" rx="2" fill="var(--green)" opacity="0.12"
+                        transform="rotate(20 244 124)">
+                        <animate attributeName="y" values="120;114;120" dur="3.5s" repeatCount="indefinite" />
+                    </rect>
+                    <circle cx="65" cy="140" r="5" fill="var(--yellow)" opacity="0.15">
+                        <animate attributeName="cy" values="140;134;140" dur="4.5s" repeatCount="indefinite" />
+                    </circle>
+                    <!-- Small star -->
+                    <path d="M85 60L87 65L92 65L88 68L89 73L85 70L81 73L82 68L78 65L83 65Z" fill="var(--accent)"
+                        opacity="0.12">
+                        <animate attributeName="opacity" values="0.12;0.25;0.12" dur="2s" repeatCount="indefinite" />
+                    </path>
+                </svg>
+            </div>
+        </div>
+
+        <div class="auth-right">
+            <!-- LOGIN FORM -->
+            <div class="auth-form-wrapper" id="login-form-wrapper">
+                <h2>Welcome back!</h2>
+                <p class="auth-subtitle">Sign in to your IntelliTask account</p>
+                <form id="login-form" class="auth-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="2" y="4" width="20" height="16" rx="3" />
+                                <polyline points="22,5 12,13 2,5" />
+                            </svg>
+                            <input type="email" id="login-email" placeholder="you@example.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="3" y="11" width="18" height="11" rx="3" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                <circle cx="12" cy="16" r="1" />
+                            </svg>
+                            <input type="password" id="login-password" placeholder="Enter your password" required />
+                        </div>
+                    </div>
+                    <div class="form-row-between">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="remember-me" />
+                            <span class="custom-check"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="link" id="show-forgot">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    <p class="auth-switch">Don't have an account? <a href="#" class="link" id="show-signup">Create
+                            one</a></p>
+                </form>
+            </div>
+
+            <!-- SIGNUP FORM -->
+            <div class="auth-form-wrapper hidden" id="signup-form-wrapper">
+                <h2>Create your account</h2>
+                <p class="auth-subtitle">Start organizing your tasks intelligently</p>
+                <form id="signup-form" class="auth-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M20 21a8 8 0 1 0-16 0" />
+                            </svg>
+                            <input type="text" id="signup-name" placeholder="Your full name" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email Address</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="2" y="4" width="20" height="16" rx="3" />
+                                <polyline points="22,5 12,13 2,5" />
+                            </svg>
+                            <input type="email" id="signup-email" placeholder="you@example.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="3" y="11" width="18" height="11" rx="3" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                <circle cx="12" cy="16" r="1" />
+                            </svg>
+                            <input type="password" id="signup-password" placeholder="Min. 6 characters" required
+                                minlength="6" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm">Confirm Password</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="3" y="11" width="18" height="11" rx="3" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                <circle cx="12" cy="16" r="1" />
+                            </svg>
+                            <input type="password" id="signup-confirm" placeholder="Re-enter your password" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                    <p class="auth-switch">Already have an account? <a href="#" class="link"
+                            id="show-login-from-signup">Sign in</a></p>
+                </form>
+            </div>
+
+            <!-- FORGOT PASSWORD FORM -->
+            <div class="auth-form-wrapper hidden" id="forgot-form-wrapper">
+                <h2>Reset your password</h2>
+                <p class="auth-subtitle">Enter your email to reset your password</p>
+
+                <!-- Step 1: Enter email -->
+                <form id="forgot-form" class="auth-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="forgot-email">Email Address</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="2" y="4" width="20" height="16" rx="3" />
+                                <polyline points="22,5 12,13 2,5" />
+                            </svg>
+                            <input type="email" id="forgot-email" placeholder="you@example.com" required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Find Account</button>
+                    <p class="auth-switch"><a href="#" class="link" id="show-login-from-forgot">Back to sign in</a></p>
+                </form>
+
+                <!-- Step 2: Set new password (shown after email is verified) -->
+                <form id="reset-form" class="auth-form hidden" autocomplete="off">
+                    <div class="reset-found-msg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--green)"
+                            stroke-width="2" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                        <span>Account found! Set your new password below.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reset-new-password">New Password</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="3" y="11" width="18" height="11" rx="3" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                <circle cx="12" cy="16" r="1" />
+                            </svg>
+                            <input type="password" id="reset-new-password" placeholder="Min. 6 characters" required
+                                minlength="6" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reset-confirm-password">Confirm New Password</label>
+                        <div class="input-icon-wrap">
+                            <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                                <rect x="3" y="11" width="18" height="11" rx="3" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                <circle cx="12" cy="16" r="1" />
+                            </svg>
+                            <input type="password" id="reset-confirm-password" placeholder="Re-enter new password"
+                                required />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Reset Password</button>
+                    <p class="auth-switch"><a href="#" class="link" id="back-to-login-from-reset">Back to sign in</a>
+                    </p>
+                </form>
+
+                <!-- Step 3: Success message -->
+                <div class="forgot-success hidden" id="forgot-success">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"
+                        stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M9 12l2 2 4-4" />
+                    </svg>
+                    <p>Your password has been reset successfully! You can now sign in with your new password.</p>
+                    <a href="#" class="link" id="back-to-login-after-forgot">Sign in now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN APP ==================== -->
+    <div id="app-container" class="app-container hidden">
+
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <svg class="sidebar-logo" viewBox="0 0 48 48" fill="none">
+                    <rect x="4" y="4" width="40" height="40" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"
+                        stroke-width="2" />
+                    <path d="M14 25L20 31L34 17" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <circle cx="14" cy="25" r="2.5" fill="var(--accent)" />
+                    <circle cx="20" cy="31" r="2.5" fill="var(--accent)" />
+                    <circle cx="34" cy="17" r="2.5" fill="var(--accent)" />
+                    <line x1="34" y1="17" x2="39" y2="12" stroke="var(--accent)" stroke-width="1.5"
+                        stroke-linecap="round" opacity="0.4" />
+                    <line x1="14" y1="25" x2="9" y2="20" stroke="var(--accent)" stroke-width="1.5"
+                        stroke-linecap="round" opacity="0.4" />
+                    <circle cx="39" cy="12" r="1.5" fill="var(--accent)" opacity="0.4" />
+                    <circle cx="9" cy="20" r="1.5" fill="var(--accent)" opacity="0.4" />
+                </svg>
+                <span class="sidebar-brand">IntelliTask</span>
+                <button class="btn-icon sidebar-close" id="sidebar-close" aria-label="Close sidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-view="dashboard" id="nav-dashboard">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                        <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                        <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                        <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                    </svg>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-view="active" id="nav-active">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    <span>Active Tasks</span>
+                </button>
+                <button class="nav-item" data-view="completed" id="nav-completed">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                        <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span>Completed</span>
+                </button>
+                <button class="nav-item" data-view="overdue" id="nav-overdue">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                        <line x1="12" y1="9" x2="12" y2="13" />
+                        <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    <span>Overdue</span>
+                </button>
+                <button class="nav-item" data-view="calendar" id="nav-calendar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <rect x="3" y="4" width="18" height="18" rx="3" />
+                        <line x1="16" y1="2" x2="16" y2="6" />
+                        <line x1="8" y1="2" x2="8" y2="6" />
+                        <line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                    <span>Calendar</span>
+                </button>
+
+                <div class="nav-divider"></div>
+
+                <button class="nav-item" id="nav-theme-toggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" id="theme-icon-sun" class="hidden">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round" id="theme-icon-moon">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                    <span id="theme-label">Dark Mode</span>
+                </button>
+
+                <button class="nav-item nav-logout" id="nav-logout">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                        stroke-linecap="round">
+                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                        <polyline points="16 17 21 12 16 7" />
+                        <line x1="21" y1="12" x2="9" y2="12" />
+                    </svg>
+                    <span>Log Out</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- Main content area -->
+        <div class="main-area">
+            <!-- Top bar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="btn-icon hamburger" id="hamburger" aria-label="Open navigation">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                    </button>
+                    <div class="topbar-brand">
+                        <h1 class="topbar-title">IntelliTask</h1>
+                        <span class="topbar-subtitle" id="page-title">Dashboard</span>
+                    </div>
+                </div>
+                <div class="topbar-right">
+                    <div class="search-wrapper">
+                        <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input type="text" class="search-input" id="search-input" placeholder="Search tasks..."
+                            aria-label="Search tasks" />
+                    </div>
+                    <button class="btn btn-primary" id="btn-add-task" aria-label="Add new task">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round">
+                            <line x1="12" y1="5" x2="12" y2="19" />
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        <span>New Task</span>
+                    </button>
+                    <div class="user-avatar" id="user-avatar" title="Account">
+                        <span id="user-initial">U</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats row -->
+            <div class="stats-row" id="stats-row">
+                <div class="stat-card">
+                    <div class="stat-icon stat-total-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="stat-value" id="stat-total">0</span>
+                        <span class="stat-label">Total Tasks</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-active-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="stat-value" id="stat-active">0</span>
+                        <span class="stat-label">Active</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-done-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                            <polyline points="22 4 12 14.01 9 11.01" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="stat-value" id="stat-done">0</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon stat-overdue-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.8" stroke-linecap="round">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="stat-value" id="stat-overdue">0</span>
+                        <span class="stat-label">Overdue</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== TASK LIST VIEW ===== -->
+            <section class="view-panel" id="view-tasks">
+                <div class="task-list" id="task-list"></div>
+                <div class="empty-state" id="empty-state">
+                    <svg class="empty-illustration" viewBox="0 0 200 160" fill="none">
+                        <rect x="50" y="20" width="100" height="120" rx="10" fill="var(--accent-soft)"
+                            stroke="var(--accent)" stroke-width="1.5" />
+                        <line x1="70" y1="50" x2="130" y2="50" stroke="var(--border-strong)" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <line x1="70" y1="68" x2="120" y2="68" stroke="var(--border-strong)" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <line x1="70" y1="86" x2="125" y2="86" stroke="var(--border-strong)" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <line x1="70" y1="104" x2="110" y2="104" stroke="var(--border-strong)" stroke-width="1.5"
+                            stroke-linecap="round" />
+                        <circle cx="60" cy="50" r="4" stroke="var(--accent)" stroke-width="1.5" />
+                        <circle cx="60" cy="68" r="4" stroke="var(--accent)" stroke-width="1.5" />
+                        <circle cx="60" cy="86" r="4" stroke="var(--accent)" stroke-width="1.5" />
+                        <circle cx="60" cy="104" r="4" stroke="var(--accent)" stroke-width="1.5" />
+                        <!-- Floating sparkles -->
+                        <circle cx="40" cy="35" r="3" fill="var(--accent)" opacity="0.2">
+                            <animate attributeName="r" values="3;4;3" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                        <circle cx="165" cy="55" r="2.5" fill="var(--pink)" opacity="0.2">
+                            <animate attributeName="r" values="2.5;3.5;2.5" dur="3s" repeatCount="indefinite" />
+                        </circle>
+                        <rect x="155" y="100" width="6" height="6" rx="1.5" fill="var(--green)" opacity="0.15"
+                            transform="rotate(15 158 103)">
+                            <animate attributeName="opacity" values="0.15;0.3;0.15" dur="2.5s"
+                                repeatCount="indefinite" />
+                        </rect>
+                    </svg>
+                    <h3>No tasks here yet</h3>
+                    <p>Hit <strong>"New Task"</strong> to create your first one!</p>
+                </div>
+            </section>
+
+            <!-- ===== CALENDAR VIEW ===== -->
+            <section class="view-panel hidden" id="view-calendar">
+                <div class="calendar-header">
+                    <button class="btn-icon" id="cal-prev" aria-label="Previous month">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <polyline points="15 18 9 12 15 6" />
+                        </svg>
+                    </button>
+                    <h3 class="cal-month-label" id="cal-month-label">March 2026</h3>
+                    <button class="btn-icon" id="cal-next" aria-label="Next month">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round">
+                            <polyline points="9 18 15 12 9 6" />
+                        </svg>
+                    </button>
+                    <button class="btn btn-ghost btn-sm" id="cal-today">Today</button>
+                </div>
+                <div class="calendar-grid">
+                    <div class="cal-day-header">Sun</div>
+                    <div class="cal-day-header">Mon</div>
+                    <div class="cal-day-header">Tue</div>
+                    <div class="cal-day-header">Wed</div>
+                    <div class="cal-day-header">Thu</div>
+                    <div class="cal-day-header">Fri</div>
+                    <div class="cal-day-header">Sat</div>
+                    <div id="cal-cells"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- ==================== TASK MODAL ==================== -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="task-modal" role="dialog" aria-labelledby="modal-title">
+            <div class="modal-header">
+                <h2 id="modal-title">New Task</h2>
+                <button class="btn-icon" id="btn-close-modal" aria-label="Close modal">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <form id="task-form" autocomplete="off">
+                <div class="form-group">
+                    <label for="task-title">Title <span class="required">*</span></label>
+                    <input type="text" id="task-title" placeholder="What needs to be done?" required />
+                </div>
+                <div class="form-group">
+                    <label for="task-desc">Description</label>
+                    <textarea id="task-desc" rows="3" placeholder="Add some details..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="task-date">Due Date <span class="required">*</span></label>
+                        <input type="date" id="task-date" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-ghost" id="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="btn-save">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round">
+                            <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        <span>Save Task</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Delete confirmation modal -->
+    <div class="modal-overlay" id="delete-modal-overlay">
+        <div class="modal modal-sm" role="dialog" aria-labelledby="delete-title">
+            <div class="modal-header">
+                <h2 id="delete-title">Delete Task</h2>
+                <button class="btn-icon" id="btn-close-delete" aria-label="Close">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <p class="delete-msg">Are you sure you want to delete this task? This action cannot be undone.</p>
+            <div class="form-actions">
+                <button class="btn btn-ghost" id="btn-cancel-delete">Cancel</button>
+                <button class="btn btn-danger" id="btn-confirm-delete">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
