@@ -15,7 +15,6 @@ IntelliTask is a modern, intuitive task management web application built entirel
 
 ##  Screenshots
 
-*Note: Screenshots will be added here showcasing the dashboard, calendar, and active tasks.*
 
 ![Dashboard](screenshots/dashboard.png)
 ![Active Tasks](screenshots/active-tasks.png)
