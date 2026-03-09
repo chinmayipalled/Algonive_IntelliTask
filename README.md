@@ -2,7 +2,7 @@
 
 IntelliTask is a modern, intuitive task management web application built entirely with HTML, CSS, and Vanilla JavaScript. It leverages client-side `localStorage` to save your data natively in the browser—no backend required.
 
-## ✨ Features
+##  Features
 
 - **Modern Authentication:** Local signup, login, and password reset flows.
 - **Dynamic Dashboard:** Get a quick overview of Total, Active, Completed, and Overdue tasks.
@@ -13,7 +13,7 @@ IntelliTask is a modern, intuitive task management web application built entirel
 - **Notifications:** Built-in toast reminders for approaching deadlines.
 - **Theme Support:** Toggle seamlessly between clean Light Mode and sleek Dark Mode.
 
-## 📸 Screenshots
+##  Screenshots
 
 *Note: Screenshots will be added here showcasing the dashboard, calendar, and active tasks.*
 
@@ -21,7 +21,7 @@ IntelliTask is a modern, intuitive task management web application built entirel
 ![Active Tasks](screenshots/active-tasks.png)
 ![Calendar View](screenshots/calendar.png)
 
-## 🚀 How to Run locally
+##  How to Run locally
 
 Since there is no backend API or server setup required, getting started is extremely easy:
 
@@ -33,7 +33,7 @@ Since there is no backend API or server setup required, getting started is extre
 3. Open `http://localhost:3000` (or your chosen port) in your browser.
 4. Sign up for a local account, and start managing tasks!
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 - **HTML5:** Semantic structure and layout.
 - **CSS3:** Custom properties (CSS variables) for robust theming, Flexbox/Grid for layout, and animations.
